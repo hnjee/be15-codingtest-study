@@ -18,7 +18,7 @@ public class Solution02 {
         // 다시 int 배열로 변환해서 반환
         return Arrays.stream(result).mapToInt(Integer::intValue).toArray();
     }
-    
+
     //풀이2: TreeSet 사용
     public static int[] solution2(int[] arr) {
         TreeSet<Integer> set = new TreeSet<>(Collections.reverseOrder());
