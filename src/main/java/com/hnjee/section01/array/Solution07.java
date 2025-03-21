@@ -6,6 +6,9 @@ import java.util.ArrayList;
 // 1) Dot 클래스: equals(), isOut(), calcNext()
 // 2) Route 클래스: equals(), isFirst()
 class Solution {
+    static char[] dir_name = {'U', 'D', 'R', 'L'};
+    static int[] dir_x = {0, 0, 1, -1};
+    static int[] dir_y = {1, -1, 0, 0};
     static ArrayList<Route> routes = new ArrayList<>();
     class Dot{
         int x;
@@ -21,9 +24,6 @@ class Solution {
             return this.x<-5 || this.x>5 || this.y<-5 || this.y>5;
         }
         private Dot calcNext(char dir){
-            char[] dir_name = {'U', 'D', 'R', 'L'};
-            int[] dir_x = {0, 0, 1, -1};
-            int[] dir_y = {1, -1, 0, 0};
             for(int j=0; j<4; j++){
                 if(dir_name[j]==dir) {
                     return new Dot(this.x+dir_x[j], this.y+dir_y[j]);
@@ -50,24 +50,14 @@ class Solution {
             return true;
         }
     }
-
     public int solution(String dirs) {
-        char[] dir_name = {'U', 'D', 'R', 'L'};
-        int[] dir_x = {0, 0, 1, -1};
-        int[] dir_y = {1, -1, 0, 0};
         Dot now = new Dot(0,0);
-        for(int i=0; i<dirs.length(); i++){
-            char dir = dirs.charAt(i);
-            for(int j=0; j<4; j++){
-                if(dir==dir_name[j]) {
-                    Dot next = now.calcNext(dir); //1. 다음 좌표 계산
-                    if(next==now || next.isOut()) break; //2. 움직임이 없거나, 좌표평면 경계 넘어가면 무시
-                    Route nowRoute = new Route(now, next);
-                    if(nowRoute.isFirst()) routes.add(nowRoute); //3. 이미 지나간 경로인지 확인하고 routes에 추가
-                    now=next; //4. 이동
-                    break;
-                }
-            }
+        for(char dir: dirs.toCharArray()){
+            Dot next = now.calcNext(dir); //1. 다음 좌표 계산
+            if(next==now || next.isOut()) continue; //2. 움직임이 없거나, 좌표평면 경계 넘어가면 무시
+            Route nowRoute = new Route(now, next);
+            if(nowRoute.isFirst()) routes.add(nowRoute); //3. 이미 지나간 경로인지 확인하고 routes에 추가
+            now=next; //4. 이동
         }
         return routes.size();
     }
