@@ -56,7 +56,7 @@ class Solution {
             Dot next = now.calcNext(dir); //1. 다음 좌표 계산
             if(next==now || next.isOut()) continue; //2. 움직임이 없거나, 좌표평면 경계 넘어가면 무시
             Route nowRoute = new Route(now, next);
-            if(nowRoute.isFirst()) routes.add(nowRoute); //3. 이미 지나간 경로인지 확인하고 routes에 추가
+            if(nowRoute.isFirst()) routes.add(nowRoute); //3. 처음으로 지나는 경로인지 확인하고 routes에 추가
             now=next; //4. 이동
         }
         return routes.size();
