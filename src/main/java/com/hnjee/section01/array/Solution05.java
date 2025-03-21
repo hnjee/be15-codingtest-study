@@ -5,7 +5,7 @@ import java.util.TreeSet;
 
 //문제 05. 행렬의 곱
 //행렬의 곱의 연산 원리를 파악한 후 -> 이를 코드로 구현하는 것이 핵심
-//answer[i][j] += arr1의 i행 요소 * arr2의 j행 요소
+//answer[i][j] += arr1의 i행 요소 * arr2의 j열 요소
 //                -> (arr1[i][k] * arr2[k][j])
 public class Solution05 {
     public int[][] solution(int[][] arr1, int[][] arr2) {
