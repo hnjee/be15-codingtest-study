@@ -5,7 +5,7 @@ import java.util.ArrayList;
 // Dot, Route 클래스 정의 -> 적절한 메소드 정의
 // 1) Dot 클래스: equals(), isOut(), calcNext()
 // 2) Route 클래스: equals(), isFirst()
-class Solution {
+class Solution07 {
     static char[] dir_name = {'U', 'D', 'R', 'L'};
     static int[] dir_x = {0, 0, 1, -1};
     static int[] dir_y = {1, -1, 0, 0};

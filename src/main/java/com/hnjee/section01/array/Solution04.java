@@ -3,7 +3,7 @@ package com.hnjee.section01.array;
 import java.util.Arrays;
 import java.util.TreeSet;
 
-//문제 04. 모의고사 
+//문제 04. 모의고사
 public class Solution04 {
     public static int[] solution(int[] answers) {
         int[][] patterns = {{1,2,3,4,5},{2,1,2,3,2,4,2,5},{3,3,1,1,2,2,4,4,5,5}};
