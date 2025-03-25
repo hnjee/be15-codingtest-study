@@ -7,9 +7,9 @@ import java.util.Stack;
 // Stack으로 괄호 짝 확인하기
 // 괄호 종류가 3가지 이므로 HashMap에 괄호 짝 넣어서 containsKey(), get() 사용
 class Solution10 {
-    static HashMap<Character, Character> map = new HashMap();
+    static HashMap<Character, Character> map = new HashMap<>();
     private boolean checkStr(String str){
-        Stack<Character> stack = new Stack();
+        Stack<Character> stack = new Stack<>();
         for(char ch : str.toCharArray()){
             if(map.containsKey(ch)){
                 stack.push(ch);
