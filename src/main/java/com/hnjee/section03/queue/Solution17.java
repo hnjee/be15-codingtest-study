@@ -25,7 +25,7 @@ public class Solution17 {
         return "Yes";
     }
     //2. 배열 index 접근으로 풀기
-    // 큐에서 요소를 빼고 넣는 작업이 없기 때문에 index로 풀어도 됨
+    // 큐에서 빼고 넣는 요소의 내용이 중요하지 않기 때문에 index만 사용해서 풀 수 있음 
     public String solution2(String[] cards1, String[] cards2, String[] goal) {
         int index1 = 0;
         int index2 = 0;
